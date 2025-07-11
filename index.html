@@ -1,20 +1,32 @@
-<script>
-  window.tovaAsyncInit = function() {
-    tova.init({
-      tenant_id: "01JYR1FT1506YT2029H61BQW3Y",
-      bot_code: "01JZ748227EKRCZ2KQN6FCRRG6",
-      ui_config: {
-        position: "right",
-        hide_greeting: false
-      },
-      extra: {}
-    });
-  };
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://cdn.tova.ai/tova.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, "script", "tova-jssdk"));
-</script>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Website của tôi</title>
+</head>
+<body>
+  <h1>Chào mừng bạn đến website!</h1>
+
+  <!-- Dán mã chatbot trước thẻ đóng </body> -->
+  <script>
+    window.tovaAsyncInit = function() {
+      tova.init({
+        tenant_id: "01JYR1FT1506YT2029H61BQW3Y",
+        bot_code: "01JZ748227EKRCZ2KQN6FCRRG6",
+        ui_config: {
+          position: "right",
+          hide_greeting: false
+        },
+        extra: {}
+      });
+    };
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://cdn.tova.ai/tova.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, "script", "tova-jssdk"));
+  </script>
+</body>
+</html>
