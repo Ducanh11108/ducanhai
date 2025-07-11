@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hỗ trợ khách hàng</title>
+</head>
+<body>
+  <h1>Chào mừng bạn đến với website của tôi!</h1>
+  <p>Nhân viên ảo sẽ hỗ trợ bạn bên dưới góc phải màn hình.</p>
+
+  <!-- MÃ CHATBOT FPT -->
+  <script>
+    window.tovaAsyncInit = function () {
+      tova.init({
+        tenant_id: "01JYRF1T506YTZ029H61B0W3Y",
+        bot_code: "01JZ74822ZFKRC2XKNQ6FCRRG6",
+        giao_dien_nguoi_dung: {
+          vi_tri: "phai",
+          hide_greeting: false
+        },
+        them: {}
+      });
+    };
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://tova.vn/livechat.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "tova-jssdk");
+  </script>
+</body>
+</html>
