@@ -3,33 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hỗ trợ khách hàng</title>
+  <title>Trang web hỗ trợ khách hàng</title>
 </head>
 <body>
-  <h1>Chào mừng bạn đến với website của tôi!</h1>
-  <p>Nhân viên ảo sẽ hỗ trợ bạn bên dưới góc phải màn hình.</p>
+  <h1>Xin chào!</h1>
+  <p>Chào mừng bạn đến với website của tôi. Hãy chat với bot ở góc dưới bên phải nhé!</p>
 
-  <!-- MÃ CHATBOT FPT -->
+  <!-- MÃ NHÚNG CHATBOT FPT AI -->
   <script>
-    window.tovaAsyncInit = function () {
+    window.tovaAsyncInit = function() {
       tova.init({
-        tenant_id: "01JYRF1T506YTZ029H61B0W3Y",
-        bot_code: "01JZ74822ZFKRC2XKNQ6FCRRG6",
-        giao_dien_nguoi_dung: {
-          vi_tri: "phai",
+        tenant_id: "01JYR1FT1506YT2029H61BQW3Y",
+        bot_code: "01JZ748227EKRCZ2KQN6FCRRG6",
+        ui_config: {
+          position: "right",
           hide_greeting: false
         },
-        them: {}
+        extra: {}
       });
     };
-    (function (d, s, id) {
+    (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://tova.vn/livechat.js";
+      js = d.createElement(s); js.id = id;
+      js.src = "https://agents.fpt.ai/connect/sdk.js";
+      js.onload = window.tovaAsyncInit;
       fjs.parentNode.insertBefore(js, fjs);
-    })(document, "script", "tova-jssdk");
+    }(document, "script", "tova-jssdk"));
   </script>
 </body>
 </html>
