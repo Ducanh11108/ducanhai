@@ -123,25 +123,33 @@
 
   <!-- SDK từ FPT -->
   <script>
-    window.tovaAsyncInit = function () {
-      tova.init({
-        tenant_id: "01JYR1F1506YT2029H61BQW3Y",
-        bot_code: "01JZ748227EKRCZ2KQN6FCRRG6",
-        ui_config: {
-          position: "right",
-          hide_greeting: false
-        },
-        extra: {}
-      });
-    };
+  window.tovaAsyncInit = function () {
+    tova.init({
+      tenant_id: "01JYR1FT1506YT2029H61BQW3Y",
+      bot_code: "01JZ748227EKRCZ2KQN6FCRRG6",
+      ui_config: {
+        position: "right",
+        hide_greeting: false
+      },
+      extra: {}
+    });
+  };
 
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "https://cdn.tova.ai/tova.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'tova-jssdk'));
-  </script>
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://agents.fpt.ai/connect/sdk.js";
+    js.onload = function () {
+      console.log("✅ FPT SDK loaded");
+      window.tovaAsyncInit();
+    };
+    js.onerror = function () {
+      alert("❌ Không thể tải SDK từ FPT.AI.\nVui lòng kiểm tra kết nối hoặc thử trình duyệt khác.");
+    };
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, "script", "tova-jssdk"));
+</script>
 </body>
 </html>
