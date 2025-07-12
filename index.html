@@ -1,180 +1,88 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trợ lý ảo AI</title>
-
-  <!-- Font & Icon -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
-    html, body {
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(135deg, #1e1e2f, #2c5364);
-      overflow: hidden;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-    }
-
-    .container {
-      text-align: center;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      animation: fadeIn 1s ease-in-out;
-      max-width: 600px;
-    }
-
-    .container h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #10a37f;
-    }
-
-    .container p {
-      font-size: 1.2rem;
-      color: #ccc;
-      margin-bottom: 30px;
-    }
-
-    .chat-button {
-      background-color: #10a37f;
-      color: white;
-      padding: 14px 30px;
-      border: none;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      box-shadow: 0 4px 15px rgba(16, 163, 127, 0.4);
-    }
-
-    .chat-button:hover {
-      background-color: #0e8669;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container h1 {
-        font-size: 2rem;
-      }
-
-      .container p {
-        font-size: 1rem;
-      }
-
-      .chat-button {
-        font-size: 1rem;
-        padding: 12px 24px;
-      }
-    }
-
-    /* ✅ KHÔNG ẨN BOT */
-    iframe[title="FPT.AI SDK"] {
-      position: fixed !important;
-      bottom: 20px !important;
-      right: 20px !important;
-      width: 380px !important;
-      height: 500px !important;
-      z-index: 9999 !important;
-      border: none !important;
-      /* ❌ Đừng để display: none ở đây */
-    }
-
-    /* Ẩn các khối trắng rỗng */
-    body > div:empty {
-      display: none !important;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+    <title>Trợ Lý AI By Duc Anh Dev</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
 </head>
+
 <body>
-  <div class="container">
-    <h1><i class="fas fa-robot"></i> Trợ Lý Ảo AI</h1>
-    <p>Hãy nhấn nút bên dưới để bắt đầu trò chuyện với trợ lý AI của chúng tôi.</p>
-    <button class="chat-button" onclick="openBot()">Bắt đầu trò chuyện</button>
-  </div>
 
-  <!-- SDK từ FPT -->
-  <script>
-  const apiKey = "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"; // Thay bằng API key của bạn
+    <div class="popup-onload">
+    <div class="cnt223">
+        <h2 style="text-align: center;">🤖 Trợ Lý AI Thông Minh - Hỗ Trợ 24/7</h2>
+        <p>
+            <h3 style="color: #007bff;">Giúp bạn:</h3>
+            ✅ Trả lời câu hỏi nhanh chóng<br>
+            ✅ Hỗ trợ học tập, công việc, lập trình<br>
+            ✅ Tư vấn giải quyết vấn đề, ý tưởng sáng tạo<br>
+            ✅ Chat giải trí, luyện tiếng Anh, tâm sự, v.v...<br><br>
 
-  async function sendMessage() {
-    const input = document.getElementById("prompt");
-    const chat = document.getElementById("chat");
-    const userMessage = input.value.trim();
+            <strong>📞 Liên hệ hỗ trợ:</strong> <span style="color: green;">Zalo: 0369.982.208</span><br><br>
 
-    if (!userMessage) return;
+            <a class="btn btn-primary" href="https://www.facebook.com/ducanhdevlt?locale=vi_VN" role="button">
+                <button type="button" class="btn btn-primary">Khám Phá Ngay</button>
+            </a>
+            <button disabled="disabled" style="background-color: red;">
+                <a href="" class="close" style="color: white;">Đóng</a>
+            </button>
+        </p>
+    </div>
+</div>
 
-    // Hiển thị tin nhắn người dùng
-    const userDiv = document.createElement("div");
-    userDiv.className = "message user";
-    userDiv.innerHTML = `<div class="box">${userMessage}</div>`;
-    chat.appendChild(userDiv);
-    input.value = "";
-    chat.scrollTop = chat.scrollHeight;
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Trò Chuyện Với ThinkFast AI</h1>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+            <div class="gpt-message message">
+                <img src="img/robot.png" alt="ChatGPT Avatar" class="avatar">
+                <div class="message-content">
+                    <div class="message-author">ThinkFast AI - DucAnh</div>
+                    <div class="message-text">Xin chào, tôi là ThinkFast AI tôi có thể giúp gì cho bạn ?</div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input id="user-input" type="text" placeholder="Nhập câu hỏi tại đây...">
+            <button id="send-btn">Gửi</button>
 
-    try {
-      // Gọi API ChatGPT
-      const response = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({
-          model: "gpt-3.5-turbo",
-          messages: [
-            { role: "user", content: userMessage }
-          ],
-          temperature: 0.7
-        })
-      });
+        </div>
+        <!-- <h1 class="sale"> Mua tài khoản chính chủ chỉ với 10k </h1>
+        <button type="button" class="btn btn-primary">Tại đây</button> -->
+    </div>
+    <!-- <div class="modal-container">
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
 
-      const data = await response.json();
-      const reply = data.choices?.[0]?.message?.content || "❌ Bot không phản hồi.";
-
-      // Hiển thị phản hồi của ChatGPT
-      const botDiv = document.createElement("div");
-      botDiv.className = "message bot";
-      botDiv.innerHTML = `<div class="box">${reply}</div>`;
-      chat.appendChild(botDiv);
-      chat.scrollTop = chat.scrollHeight;
-
-    } catch (error) {
-      // Hiển thị lỗi nếu có
-      const errorDiv = document.createElement("div");
-      errorDiv.className = "message bot";
-      errorDiv.innerHTML = `<div class="box">⚠️ Lỗi khi gọi API: ${error.message}</div>`;
-      chat.appendChild(errorDiv);
-    }
-  }
-</script>
+    <script src='https://code.jquery.com/jquery-1.8.2.js'></script>
+    <script src="./script.js"></script>
 </body>
+</body>
+
 </html>
