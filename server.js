@@ -22,9 +22,6 @@ app.post('/api/chat', async (req, res) => {
 
         const additionalMessage = {
             role: 'system',
-            content: 'You are a helpfull chatbot, your responsibility is to answer all user questions in a humorous way and in Vietnamese language, if user need to find more information, you will introduce them to visit: zalo: 0339.195.193 Or facebook link: https://www.facebook.com/ducanhdevlt'
-        };
-
         const response = await openai.chat.completions.create({
             model: 'gemini-2.0-flash',
             messages: [additionalMessage, ...messages],
