@@ -2,125 +2,130 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trợ lý AI thông minh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trợ lý ảo AI</title>
+
+  <!-- Font & Icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(135deg, #1e1e2f, #2c5364);
+      overflow: hidden;
     }
 
     body {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      font-family: 'Segoe UI', sans-serif;
-      color: #ffffff;
-      height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 40px 20px 80px;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
     }
 
     .container {
-      max-width: 800px;
-      margin: 0 auto;
+      text-align: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1s ease-in-out;
+      max-width: 600px;
     }
 
-    h1 {
-      text-align: center;
+    .container h1 {
       font-size: 3rem;
-      color: #00ffc3;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 10px #000;
+      color: #10a37f;
     }
 
-    .chat-box {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(8px);
-    }
-
-    .chat-message {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    .chat-message.bot .avatar {
-      background-color: #00ffc3;
-    }
-
-    .chat-message.user .avatar {
-      background-color: #00aaff;
-    }
-
-    .avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      color: #000;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 12px;
-      flex-shrink: 0;
-    }
-
-    .message {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 12px 16px;
-      max-width: 85%;
-    }
-
-    footer {
-      text-align: center;
+    .container p {
+      font-size: 1.2rem;
       color: #ccc;
-      font-size: 0.9rem;
-      margin-top: 40px;
+      margin-bottom: 30px;
     }
 
-    @media screen and (max-width: 600px) {
-      .chat-box {
-        padding: 16px;
-      }
+    .chat-button {
+      background-color: #10a37f;
+      color: white;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 15px rgba(16, 163, 127, 0.4);
+    }
 
-      h1 {
+    .chat-button:hover {
+      background-color: #0e8669;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container h1 {
         font-size: 2rem;
       }
+
+      .container p {
+        font-size: 1rem;
+      }
+
+      .chat-button {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+    }
+
+    /* ✅ KHÔNG ẨN BOT */
+    iframe[title="FPT.AI SDK"] {
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      width: 380px !important;
+      height: 500px !important;
+      z-index: 9999 !important;
+      border: none !important;
+      /* ❌ Đừng để display: none ở đây */
+    }
+
+    /* Ẩn các khối trắng rỗng */
+    body > div:empty {
+      display: none !important;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🤖 Trợ lý AI của bạn</h1>
-    <div class="chat-box">
-      <div class="chat-message bot">
-        <div class="avatar">AI</div>
-        <div class="message">Xin chào! Tôi là trợ lý AI của bạn. Hãy hỏi tôi điều gì đó nhé!</div>
-      </div>
-      <div class="chat-message user">
-        <div class="avatar">Tôi</div>
-        <div class="message">Bạn có thể giúp tôi tạo một trang web đẹp không?</div>
-      </div>
-      <div class="chat-message bot">
-        <div class="avatar">AI</div>
-        <div class="message">Chắc chắn rồi! Giao diện bạn đang xem chính là một ví dụ đó 😎</div>
-      </div>
-    </div>
-    <footer>© 2025 DucanhAI | Giao diện cảm hứng từ ChatGPT</footer>
+    <h1><i class="fas fa-robot"></i> Trợ Lý Ảo AI</h1>
+    <p>Hãy nhấn nút bên dưới để bắt đầu trò chuyện với trợ lý AI của chúng tôi.</p>
+    <button class="chat-button" onclick="openBot()">Bắt đầu trò chuyện</button>
   </div>
 
-  <!-- MÃ CHATBOT FPT.AI -->
+  <!-- SDK từ FPT -->
   <script>
     window.tovaAsyncInit = function () {
       tova.init({
-        tenant_id: "01JYR1FT1506YT2029H61BQW3Y",
+        tenant_id: "01JYR1F1506YT2029H61BQW3Y",
         bot_code: "01JZ748227EKRCZ2KQN6FCRRG6",
         ui_config: {
           position: "right",
@@ -129,13 +134,14 @@
         extra: {}
       });
     };
+
     (function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
       js.src = "https://cdn.tova.ai/tova.js";
       fjs.parentNode.insertBefore(js, fjs);
-    })(document, "script", "tova-jssdk");
+    }(document, 'script', 'tova-jssdk'));
   </script>
 </body>
 </html>
